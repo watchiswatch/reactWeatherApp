@@ -7,6 +7,8 @@ const Search = () => {
     const [city,setCity] = useState("");
     const [weather,setWeather] = useState("")
     const [temp,setTemp] = useState("")
+    const [country,setCountry] = useState("")
+
     const handleClick = async(event) => {
         const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=2428eee7189218104b3ffa27624784c3`)
         
@@ -15,6 +17,7 @@ const Search = () => {
         setCity(da.name)
         setWeather(da.weather[0].main)
         setTemp(da.main.temp)
+        setCountry(da.sys.country)
     }
 
     const handleChange = (event) => {
@@ -26,7 +29,7 @@ const Search = () => {
         
         <input onChange={handleChange} type="text" placeholder='Which city?'/>
         <button onClick={handleClick}>search</button>
-        <Info name={city} weather={weather} temp={temp} />
+        <Info name={city} weather={weather} temp={temp} country={country} />
     </div>
   )
 }
