@@ -2,12 +2,14 @@ import styled from "styled-components";
 import Header from "./Components/Header"
 import Search from "./Components/Search";
 
+
 function App() {
   return (
     <StyledBackground>
       <StyledContainer>
         <Header/>
         <Search/>
+        {/* <Info/> */}
       </StyledContainer>
     </StyledBackground>
   );
